@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latif Safruddin - Noto Ati Resiki Ati</title>
+    <style>
+        /* Variabel Warna untuk Tema */
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+            --btn-bg: #2c3e50;
+            --btn-text: #ffffff;
+            --hover-bg: #1a252f;
+            --border-color: #cccccc;
+        }
+
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #f4f4f9;
+            --card-bg: #1e1e1e;
+            --btn-bg: #e5a93d; /* Warna emas elegan untuk dark mode */
+            --btn-text: #121212;
+            --hover-bg: #c9932d;
+            --border-color: #444444;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            transition: all 0.4s ease;
+        }
+
+        /* Navigasi Atas (Tombol Bahasa & Tema) */
+        .controls {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            margin-top: 10px;
+        }
+
+        button {
+            cursor: pointer;
+            background: transparent;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: var(--btn-bg);
+            color: var(--btn-text);
+        }
+
+        /* Profil */
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--btn-bg);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        /* Daftar Tautan */
+        .links {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-btn {
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .link-btn:hover {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Kontrol Tema dan Bahasa -->
+    <div class="controls">
+        <button onclick="toggleLang()" id="langBtn">🇮🇩 ID / EN</button>
+        <button onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+    </div>
+
+    <!-- Bagian Profil -->
+    <div class="profile">
+        <!-- Memanggil gambar dengan nama persis sesuai file Anda -->
+        <img src="WhatsApp Image 2026-05-11 at 09.52.07.jpeg" alt="Latif Safruddin">
+        <h1>Latif Safruddin</h1>
+        <p id="bio">Noto Ati Resiki Ati. Selamat datang di pusat informasi dan tautan saya.</p>
+    </div>
+
+    <!-- Bagian Tautan (Ganti tanda # dengan link asli Anda dari Linktree) -->
+    <div class="links">
+        <a href="#" class="link-btn" id="link1">🌐 Kunjungi Website Utama</a>
+        <a href="#" class="link-btn" id="link2">📱 Hubungi via WhatsApp</a>
+        <a href="#" class="link-btn" id="link3">📸 Instagram</a>
+        <a href="#" class="link-btn" id="link4">💼 Profil Bisnis / Portofolio</a>
+    </div>
+
+    <!-- Script Interaktif -->
+    <script>
+        let isDark = false;
+        let isId = true;
+
+        // Fungsi Mode Terang/Gelap
+        function toggleTheme() {
+            isDark = !isDark;
+            document.body.classList.toggle('dark-mode');
+            document.getElementById('themeBtn').innerText = isDark ? '☀️ Light' : '🌙 Dark';
+        }
+
+        // Fungsi Ganti Bahasa
+        function toggleLang() {
+            isId = !isId;
+            if (isId) {
+                // Teks Indonesia
+                document.getElementById('langBtn').innerText = '🇮🇩 ID / EN';
+                document.getElementById('bio').innerText = 'Noto Ati Resiki Ati. Selamat datang di pusat informasi dan tautan saya.';
+                document.getElementById('link1').innerText = '🌐 Kunjungi Website Utama';
+                document.getElementById('link2').innerText = '📱 Hubungi via WhatsApp';
+                document.getElementById('link3').innerText = '📸 Instagram';
+                document.getElementById('link4').innerText = '💼 Profil Bisnis / Portofolio';
+            } else {
+                // Teks Inggris
+                document.getElementById('langBtn').innerText = '🇬🇧 EN / ID';
+                document.getElementById('bio').innerText = 'Noto Ati Resiki Ati. Welcome to my central information hub and links.';
+                document.getElementById('link1').innerText = '🌐 Visit Main Website';
+                document.getElementById('link2').innerText = '📱 Contact via WhatsApp';
+                document.getElementById('link3').innerText = '📸 Instagram';
+                document.getElementById('link4').innerText = '💼 Business Profile / Portfolio';
+            }
+        }
+    </script>
+</body>
+</html>
